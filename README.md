@@ -8,5 +8,7 @@ bubble1 = new Bubble(random(width), random(height), random(10, 40), floor(random
 ```
 Color is HSLA formatted, so the bubbles are at 0.1 alpha, making them mostly transparent. I also added a slight shadow to the bubble to make them stand out a bit more.
 
+LINK: https://editor.p5js.org/alexis.krull/sketches/71cvZOBSw
+
 Challenge 2
 - 
