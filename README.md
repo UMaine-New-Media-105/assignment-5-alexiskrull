@@ -11,4 +11,20 @@ Color is HSLA formatted, so the bubbles are at 0.1 alpha, making them mostly tra
 LINK: https://editor.p5js.org/alexis.krull/sketches/71cvZOBSw
 
 Challenge 2
-- 
+- Similar to Challenge 1 but make 50 bubbles instead. I did this by initializing a ```total = 50;``` and then making 2 different loops. The first loop passed randomized instances of the bubbles class into an array:
+```
+  bubbles = [];
+  for (let numBubbles = 0; numBubbles < total; numBubbles++ ) { //loop to achieve total number of bubbles desired
+    ...
+    bubbles[numBubbles] = new Bubble(thisX, thisY, thisR, thisColor); //each iteration into the list creates a new bubble instance
+  }
+```
+and the second loop iterated through the array and called the move() and show() functions from within the class for each bubble instance:
+```
+  for (let bubblesShown = 0; bubblesShown < total; bubblesShown++) {
+    bubbles[bubblesShown].move();
+    bubbles[bubblesShown].show();
+  }
+```
+
+LINK: https://editor.p5js.org/alexis.krull/sketches/71cvZOBSw
