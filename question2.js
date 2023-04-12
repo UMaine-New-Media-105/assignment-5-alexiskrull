@@ -16,8 +16,8 @@ function draw() {
   background(255);
   //shows/moves each instance of the bubble in the bubbles[] array
   for (let bubblesShown = 0; bubblesShown < total; bubblesShown++) {
-  bubbles[bubblesShown].move();
-  bubbles[bubblesShown].show();
+    bubbles[bubblesShown].move();
+    bubbles[bubblesShown].show();
   }
 }
 
