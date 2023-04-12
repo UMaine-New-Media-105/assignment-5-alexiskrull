@@ -29,29 +29,35 @@ class Bubble {
     this.hue = hue;
   }
   move() {
+    //x direction
+    //if bubble is too far left, randomizes speed to move more right
     if(this.x <= 0){
       this.x = this.x + random(5);
-    } else if (this.x >= width){
-      this.x = this.x + random(-5);
-    } else {
+    } else if (this.x >= width){ //if too far right, randomizes speed to move left
+      this.x = this.x + random(-5, 0);
+    } else { //if just right, randomize movement in either direction
       this.x = this.x + random(-5, 5);
     }
+    //y direction
+    //if bubble too far up, randomizes speed to move more down
     if(this.y <= 0){
       this.y = this.y + random(5);
-    } else if (this.y >= height){
-      this.y = this.y + random(-5);
-    } else {
+    } else if (this.y >= height){ //if too far down, randomizes speed to move up
+      this.y = this.y + random(-5, 0);
+    } else { //if just right, randomize movement in either direction
       this.y = this.y + random(-5, 5);
     }
   }
   show() {
     push();
-    fill("hsla("+ this.hue +", 100%, 50%, .1)");
-    stroke("hsla("+ this.hue +", 100%, 50%, .1)");
+    fill("hsla("+ this.hue +", 100%, 50%, .1)"); //random hue, translucent
+    stroke("hsla("+ this.hue +", 100%, 50%, .1)"); //randome hue, translucent
+    //blur
     drawingContext.shadowOffsetX = 5;
     drawingContext.shadowOffsetY = 5;
     drawingContext.shadowBlur = 15;
     drawingContext.shadowColor = "black";
+    
     translate(this.x, this.y);
     ellipse(0, 0, this.r * 2);
     pop();
