@@ -57,8 +57,8 @@ function draw() {
         let proposedCollision = planetList[checked];
         let isDiff = planetList[num] !== checked;
         if (isDiff && isTouching(currentPlanet, proposedCollision)) {
-          let _X = 25;
-          let _Y = random(25, height - 25);
+          let _X = currentPlanet.x;
+          let _Y = currentPlanet.y;
           let _Hue = floor(random(20, 340));
           let _Size = 1;
           let _Rotation = random(-50, 50);
