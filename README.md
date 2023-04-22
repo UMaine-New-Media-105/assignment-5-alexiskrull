@@ -66,3 +66,18 @@ where it also moves the sprite to a different height and reversing the addX numb
 where _X and _Y are input into the new planet call ```planetList.push(new Planet(_X, _Y, _Hue, _Rotation));```
 
 LINK: https://editor.p5js.org/alexis.krull/sketches/P66S3mDFB
+_________________________________________________________________________________________________
+Challenge 5
+- Expand on challenge 4 and add detection for any collision between a catcher and a breeder, and remove the breeder from the simulation.
+
+To do this, I used the splice() function and the dist() function to detect when a planet and blackhole are overlapping and remove the planet from the array, removing it from the sketch altogether as such:
+```
+      if (isTouching(bhList[num], proposedCatch)){
+        planetList.splice(numBreeder, 1);
+        bhList[num].health = startHealth;
+        break;
+      }
+```
+using the same isTouching function from Challenge 4. It also resets the health of the black hole each time a collision is detected so that it doesn't die. If the health of the black hole reaches 0, it will die. The health of the black hole is also tied to the speed of the refracted starlight location, so as the health decreases, the rotation slows down.
+
+LINK: https://editor.p5js.org/alexis.krull/sketches/4CSbrPkOX
